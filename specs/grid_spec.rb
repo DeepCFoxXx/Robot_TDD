@@ -22,4 +22,9 @@ class TestGrid < MiniTest::Test
     assert_equal(false, @grid.has_warning?(1, 1))
   end
 
+  def test_warning_true
+    @grid.dimensions[1][1] = 'x'
+    assert_equal(true, @grid.has_warning?(1, 1))
+  end
+
 end
