@@ -14,4 +14,8 @@ class TestGrid < MiniTest::Test
     assert_equal(12, @grid.dimensions.size)
   end
 
+  def test_grid_y
+    assert_equal(12, @grid.dimensions[11].size)
+  end
+
 end
