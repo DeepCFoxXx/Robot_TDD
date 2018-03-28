@@ -8,4 +8,8 @@ class Grid
     @dimensions = Array.new(x + 1){Array.new(y + 1)}
   end
 
-end 
+  def has_warning?(x, y)
+    return @dimensions[x][y] == 'x'
+  end
+
+end

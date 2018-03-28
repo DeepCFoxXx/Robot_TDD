@@ -18,4 +18,8 @@ class TestGrid < MiniTest::Test
     assert_equal(12, @grid.dimensions[11].size)
   end
 
+  def test_warning_false
+    assert_equal(false, @grid.has_warning?(1, 1))
+  end
+
 end
