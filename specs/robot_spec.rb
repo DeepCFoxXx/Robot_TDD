@@ -48,4 +48,9 @@ class TestRobot < MiniTest::Test
     assert_equal('1 0 S', @robot1.get_position)
   end
 
+  def test_carry_out_instructions__full_circle
+    @robot1.carry_out_instructions('RFRFRFRF')
+    assert_equal('1 1 E', @robot1.get_position)
+  end
+
 end
