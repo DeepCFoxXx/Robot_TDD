@@ -69,7 +69,7 @@ class Robot
 
   def move(instruction)
     store_previous_coords
-    if !@grid.has_warning_scent?(@x, @y)
+    if !@grid.has_warning?(@x, @y)
       return move_with_no_warning_scent(instruction)
     else
       move_with_warning_scent(instruction)
@@ -89,6 +89,22 @@ class Robot
       return false
     end
     return true
+  end
+
+  def add_warning_scent(x, y)
+    @grid.dimensions[x][y] = "x"
+  end
+
+  def move_with_warning_scent(instruction)
+    change_coords(instruction)
+    if !on_grid?
+      reinstate_previous_coords
+    end
+  end
+
+  def reinstate_previous_coords
+    @x = @prev_x
+    @y = @prev_y
   end
 
 end

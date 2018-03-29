@@ -7,7 +7,7 @@ class TestGrid < MiniTest::Test
 
   def setup
     @grid = Grid.new(11, 11)
-    # @robot = Robot.new('1 1 E', @grid)
+    @robot = Robot.new('1 1 E', @grid)
   end
 
   def test_grid_x
