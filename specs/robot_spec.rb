@@ -37,4 +37,10 @@ class TestRobot < MiniTest::Test
     assert_equal('2 1 E', @robot1.get_position)
   end
 
+  def test_turn_and_move__right_east_to_south
+    @robot1.change_orientation('R')
+    @robot1.change_coords('F')
+    assert_equal('1 0 S', @robot1.get_position)
+  end
+
 end
