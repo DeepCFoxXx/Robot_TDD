@@ -82,4 +82,9 @@ class TestRobot < MiniTest::Test
     assert_equal("x", @grid.dimensions[4][1])
   end
 
+  # def test_add_warning_scent_to_grid__when_moved_off_grid_x
+  #   @robot1.carry_out_instructions('FFFFFFFFFFFF')
+  #   assert_equal('x', @grid.dimensions[11][11])
+  # end
+
 end
