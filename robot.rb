@@ -26,4 +26,8 @@ class Robot
     return @x <= @grid.x && @y <= @grid.y && @x >= 0 && @y >= 0
   end
 
+  def get_orientation_index
+    return @orientations.index(@orientation)
+  end
+
 end

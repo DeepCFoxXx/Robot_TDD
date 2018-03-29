@@ -18,4 +18,8 @@ class TestRobot < MiniTest::Test
     assert_equal('1 1 E', @robot1.get_position)
   end
 
+  def test_get_orientation_index
+    assert_equal(1, @robot1.get_orientation_index)
+  end
+
 end
