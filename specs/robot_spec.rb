@@ -43,4 +43,9 @@ class TestRobot < MiniTest::Test
     assert_equal('1 0 S', @robot1.get_position)
   end
 
+  def test_carry_out_instructions
+    @robot1.carry_out_instructions('RF')
+    assert_equal('1 0 S', @robot1.get_position)
+  end
+
 end

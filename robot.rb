@@ -56,4 +56,30 @@ class Robot
     end
   end
 
+  def carry_out_instructions(input)
+    instructions = input.split('')
+    for instruction in instructions do
+      if instruction == 'F'
+        return if !move(instruction)
+      else
+        change_orientation(instruction)
+      end
+    end
+  end
+
+  def move(instruction)
+    store_previous_coords
+    if !@grid.has_warning_scent?(@x, @y)
+      return move_with_no_warning_scent(instruction)
+    else
+      move_with_warning_scent(instruction)
+      return true
+    end
+  end
+
+  def store_previous_coords
+    @prev_x = @x
+    @prev_y = @y
+  end
+
 end
