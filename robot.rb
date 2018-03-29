@@ -17,4 +17,13 @@ class Robot
     @prev_y = nil
   end
 
-end 
+  def get_position
+    return "#{@prev_x} #{@prev_y} #{@orientation} LOST" if !on_grid?
+    return "#{@x} #{@y} #{@orientation}"
+  end
+
+  def on_grid?
+    return @x <= @grid.x && @y <= @grid.y && @x >= 0 && @y >= 0
+  end
+
+end
