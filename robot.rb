@@ -82,4 +82,13 @@ class Robot
     @prev_y = @y
   end
 
+  def move_with_no_warning_scent(instruction)
+    change_coords(instruction)
+    if !on_grid?
+      add_warning_scent(@prev_x, @prev_y)
+      return false
+    end
+    return true
+  end
+
 end
