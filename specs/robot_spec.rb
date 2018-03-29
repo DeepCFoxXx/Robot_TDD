@@ -68,8 +68,13 @@ class TestRobot < MiniTest::Test
   end
 
   def test_position_lost_if_moves_off_grid__positive
-    @robot1.carry_out_instructions('FFFFF')
-    assert_equal('6 1 E', @robot1.get_position)
+    @robot1.carry_out_instructions('FFFFFFFFFFFF')
+    assert_equal('11 1 E LOST', @robot1.get_position)
+  end
+
+  def test_position_lost_if_moves_off_grid__by_multiple_positions
+    @robot1.carry_out_instructions('FFFFFFFFFFFF')
+    assert_equal('11 1 E LOST', @robot1.get_position)
   end
 
 end
