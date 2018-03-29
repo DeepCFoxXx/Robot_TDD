@@ -53,4 +53,13 @@ class TestRobot < MiniTest::Test
     assert_equal('1 1 E', @robot1.get_position)
   end
 
+  def test_check_on_grid__false
+    @robot1.carry_out_instructions('RFF')
+    assert_equal(false, @robot1.on_grid?)
+  end
+
+  def test_check_on_grid__true
+    assert_equal(true, @robot1.on_grid?)
+  end
+
 end
