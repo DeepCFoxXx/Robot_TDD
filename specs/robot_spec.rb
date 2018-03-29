@@ -77,4 +77,9 @@ class TestRobot < MiniTest::Test
     assert_equal('11 1 E LOST', @robot1.get_position)
   end
 
+  def test_add_warning_scent_to_grid
+    @robot1.add_warning_scent(4, 1)
+    assert_equal("x", @grid.dimensions[4][1])
+  end
+
 end
