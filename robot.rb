@@ -30,4 +30,23 @@ class Robot
     return @orientations.index(@orientation)
   end
 
+  def change_orientation(direction)
+    index = get_orientation_index
+    rotated = rotate_orientations(direction)
+    @orientation = rotated[index]
+  end
+
+  def rotate_orientations(direction)
+    case direction
+    when 'R'
+      rotated = @orientations.rotate
+    when 'L'
+      rotated = @orientations.rotate(-1)
+    else
+      rotated = @orientations
+    end
+    return rotated
+  end
+
+
 end

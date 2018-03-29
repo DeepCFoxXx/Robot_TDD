@@ -22,4 +22,9 @@ class TestRobot < MiniTest::Test
     assert_equal(1, @robot1.get_orientation_index)
   end
 
+  def test_change_orientation__left_east_to_north
+    @robot1.change_orientation('L')
+    assert_equal('1 1 N', @robot1.get_position)
+  end
+
 end
