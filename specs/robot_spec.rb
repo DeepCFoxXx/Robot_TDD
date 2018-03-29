@@ -32,4 +32,9 @@ class TestRobot < MiniTest::Test
     assert_equal('1 1 S', @robot1.get_position)
   end
 
+  def test_move_forwards__east
+    @robot1.change_coords('F')
+    assert_equal('2 1 E', @robot1.get_position)
+  end
+
 end

@@ -48,5 +48,12 @@ class Robot
     return rotated
   end
 
+  def change_coords(direction)
+    change = @movements[@orientation]
+    if direction == 'F'
+      @x += change[0]
+      @y += change[1]
+    end
+  end
 
 end
