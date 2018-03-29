@@ -14,4 +14,8 @@ class TestRobot < MiniTest::Test
     @robot4 = Robot.new('0 3 W', @grid)
   end
 
+  def test_get_starting_position
+    assert_equal('1 1 E', @robot1.get_position)
+  end
+
 end
